@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  {% load staticfiles %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -39,16 +40,16 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">MWEBS</a>
+      <a class="navbar-brand" href="{% url 'home' %}">MWEBS</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="#">LinkedIn</a>
-          <a class="nav-item nav-link" href="#">Resume</a>
-          <a class="nav-item nav-link" href="#">Blog</a>
+          <a target="_blank" class="nav-item nav-link" href="https://www.linkedin.com/in/arun-kumar-reddy-bbaa48146/">LinkedIn</a>
+          <a target="_blank" class="nav-item nav-link" href="{% static 'arun_Resume.pdf' %}">Resume</a>
+          <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
         </div>
       </div>
     </nav>
@@ -59,10 +60,13 @@
     <section class="jumbotron text-center">
       <div class="container">
         <h1 class="jumbotron-heading">Hi, I'm Arun</h1>
-        <p class="lead text-muted">Hey, my name is Arun. I am a technology enthusiast who likes developing in Python, Ruby, Javascript.</p>
+        <p class="lead text-muted">Hey, my name is Arun. This is my personal website, I am a technology enthusiast who likes developing in Python,
+          Ruby, Javascript etc.</p>
         <p>
           <a href="mailto:arunkumar.ry1@gmail.com" class="btn btn-primary my-2">Email Me</a>
         </p>
+        <br/>
+        <img src="{% static 'arun.jpg' %}" height="400">
       </div>
     </section>
 
